@@ -1,0 +1,10 @@
+<div class="collections">
+  <h2 class="collections__text">{{ settings['collections'].settings.heading | upcase }}</h2>
+  {% if collection.title %}
+    <div>
+      {% for title in collection.title %}
+        <h3>{{ title }}</h3>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

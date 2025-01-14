@@ -10,12 +10,25 @@
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
-        "button_text": "Shop Now",
+        "button_text": "VIEW THE COLLECTION",
         "button_link": "/collections/all",
         "marquee_text": "Free Shipping on Orders Over $50",
         "background_image": "hero_banner_img.avif"
       }
     },
+    "hero-bar": {
+      "type": "hero-bar",
+      "settings": {
+      "marquee_text": "SHUFFLE ESSENTIALS"
+      }
+    },
+    "collections": {
+      "type": "collections",
+      "settings": {
+        "heading": "LATEST COLLECTION"
+      }
+    },
+
     "footer": {
       "type": "footer",
       "settings": {

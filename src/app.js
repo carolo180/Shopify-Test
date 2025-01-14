@@ -58,3 +58,66 @@ document.addEventListener("DOMContentLoaded", () => {
       headerContainer.style.backgroundColor = '#1C1C1E'; // Restore transparent background
     }
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.querySelector('.featured-products__toggle');
+      const productCards = document.querySelectorAll('.product-card');
+    
+      // Configura el Intersection Observer para el efecto parallax
+      const observerOptions = {
+        threshold: 0.2, // Inicia la animación cuando el 20% de la tarjeta esté en vista
+      };
+    
+      const observerCallback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      };
+    
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+      productCards.forEach((card, index) => {
+        // Observa solo las tarjetas adicionales (índice >= 4)
+        if (index >= 4) {
+          observer.observe(card);
+          card.style.display = 'none'; // Oculta las tarjetas adicionales inicialmente
+        }
+      });
+    
+      // Lógica para alternar entre "Ver más" y "Ver menos"
+      toggleButton.addEventListener('click', function () {
+        const isExpanded = toggleButton.getAttribute('data-state') === 'more';
+    
+        if (isExpanded) {
+          // Mostrar las tarjetas adicionales con el efecto parallax
+          productCards.forEach((card, index) => {
+            if (index >= 4) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.classList.add('visible');
+              }, 50 * (index - 3)); // Escalonar la animación para mejor efecto
+            }
+          });
+          toggleButton.textContent = 'VIEW LESS';
+          toggleButton.setAttribute('data-state', 'less');
+        } else {
+          // Ocultar las tarjetas adicionales
+          productCards.forEach((card, index) => {
+            if (index >= 4) {
+              card.classList.remove('visible');
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300); // Retraso para esperar que termine la animación
+            }
+          });
+          toggleButton.textContent = 'VIEW MORE';
+          toggleButton.setAttribute('data-state', 'more');
+        }
+      });
+    });
+    
+    
+    
+    

@@ -1,0 +1,8 @@
+<section class="featured-products">
+  <div class="product-list">
+    {% for product in products %}
+      {% render 'carrusel-card', product: product %}
+    {% endfor %}
+  </div>
+  <button class="featured-products__toggle" data-state="more">VIEW ALL</button>
+</section>
