@@ -1,32 +1,7 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/app.js":
+(()=>{"use strict";var __webpack_modules__={"./src/styles.scss":
+/*!*************************!*\
+  !*** ./src/styles.scss ***!
+  \*************************/(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-simulator/./src/styles.scss?")},"./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
-  \********************/
-/***/ (() => {
-
-eval("console.log('Gradiweb is online!!!');\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?");
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/app.js"]();
-/******/ 	
-/******/ })()
-;
+  \********************/(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./src/styles.scss\");\n\nconsole.log('Gradiweb is online!!!');\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const bannerTrack = document.getElementById(\"banner-track\");\n    const barTrack = document.getElementById(\"bar-track\");\n  \n    const ensureContinuousScroll = () => {\n      const trackWidth = bannerTrack.offsetWidth;\n      const parentWidth = bannerTrack.parentElement.offsetWidth;\n\n      const trackBarWidth = barTrack.offsetWidth;\n      const parentBarWidth = barTrack.parentElement.offsetWidth;\n  \n      // Clonamos los elementos hasta que el ancho total del track sea mayor al del contenedor\n      while (bannerTrack.scrollWidth < parentWidth * 2) {\n        const items = [...bannerTrack.children];\n        items.forEach((item) => {\n          const clone = item.cloneNode(true);\n          bannerTrack.appendChild(clone);\n        });\n      }\n\n       // Clonamos los elementos hasta que el ancho total del track sea mayor al del contenedor\n       while (barTrack.scrollWidth < parentBarWidth * 2) {\n        const items = [...barTrack.children];\n        items.forEach((item) => {\n          const clone = item.cloneNode(true);\n          barTrack.appendChild(clone);\n        });\n      }\n    };\n  \n    // Llenamos el carril para un scroll continuo\n    ensureContinuousScroll();\n  });\n\n  document.addEventListener('DOMContentLoaded', () => {\n    // ... (other JavaScript, including menu toggle and blur-on-scroll)\n    \n    const hamburger = document.getElementById('burguer');\n    const menu = document.getElementById('menu');\n    \n    hamburger.addEventListener('click', () => {\n      menu.style.left = menu.style.left === '0px' ? '-100%' : '0';\n      hamburger.classList.toggle('is-active'); // Toggle the 'is-active' class\n    });\n  });\n\n  window.addEventListener('scroll', () => {\n    const headerContainer = document.querySelector('.header__container');\n    if (window.scrollY > 0) {\n      headerContainer.style.backdropFilter = 'blur(7px)'; // Add blur on scroll\n      headerContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.31)'; // Example semi-transparent background\n    } else {\n      headerContainer.style.backdropFilter = 'blur(0)'; // Remove blur at the top\n      headerContainer.style.backgroundColor = '#1C1C1E'; // Restore transparent background\n    }\n    });\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?")}},__webpack_module_cache__={};function __webpack_require__(e){var n=__webpack_module_cache__[e];if(void 0!==n)return n.exports;var r=__webpack_module_cache__[e]={exports:{}};return __webpack_modules__[e](r,r.exports,__webpack_require__),r.exports}__webpack_require__.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var __webpack_exports__=__webpack_require__("./src/app.js")})();
