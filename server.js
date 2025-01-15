@@ -20,17 +20,21 @@ app.set('view engine', 'liquid');
 
 app.use(express.static('public'));
 
+
 const products = require('./data/products.json');
 const collections = require('./data/collections.json');
 const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-8'));
 
 app.get('/', (req, res) => {
+  console.log("Collections: ", collections);  // Verifica los datos que se están pasando
   res.render('index', { 
     products, 
     collections, 
     settings: settings.sections
   });
 });
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

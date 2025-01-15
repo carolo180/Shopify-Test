@@ -53,6 +53,9 @@
     list-style: none;
     text-decoration: none;
   }
+  html {
+    scroll-behavior: smooth;
+    }
   
  
     //Header section
@@ -61,6 +64,9 @@
     left: 0;
     width: 100%;
     z-index: 100; 
+    @media (max-width: 768px) {
+      position: absolute;
+    }
   }
   // Top bar scroll
     .banner {
@@ -299,7 +305,7 @@
       .hero{
         @include flex-center();
         background-color: $background-black;
-        padding: 9vw 2vw 2vw;
+        padding: 9vw 5vw 2vw;
 
         &__banner{
           max-width: 1440px;
@@ -310,6 +316,7 @@
           border-radius: 5px;
           position: relative;
           z-index: 0;
+          object-fit: cover;
         }
         &__button{
           position: absolute;
@@ -322,6 +329,10 @@
           border-radius: 5px;
           &:hover {
             background-color: darken($dark_purple, 10%);
+          }
+          @media screen and (max-width: 768px) {
+            padding: 10px 21px;
+            left: 31px;
           }
         }
         &__button a{
@@ -356,6 +367,9 @@
         font-family: 'Countach Bold'; 
           color: $color-fonts;
           font-size: 85px;
+          @media screen and (max-width: 768px) {
+            font-size: 60px;
+          }
       }
     
       &__image {
@@ -394,6 +408,9 @@
       
         &:hover {
           background-color: darken($dark_purple, 10%);
+        }
+        @media screen and (max-width: 768px) {
+          margin: 77px auto;
         }
       }
     
@@ -459,6 +476,9 @@
            background-color: $background-black;
            padding: 1vw 0.3vw;
            height: 18%;
+           @media screen and (max-width: 768px) {
+            height: 35%;
+          }
         }
         &__text, &__price{
           padding-top: 7px;
@@ -642,4 +662,31 @@
       
       }
       }
-    
+
+      .featured-collections{
+        background-color: $background-black;
+        padding: 0vw 5vw 2vw;
+        &__title{
+          @include flex-center();
+          font-family: 'Countach Bold'; 
+          color: $color-fonts;
+          font-size: 3.7rem;
+          padding-bottom: 3rem;
+          @media screen and (max-width: 768px) {
+            font-size: 1.7rem;
+            text-align: center;
+          }
+        }
+        &__h2{
+          margin: 0rem 1rem;
+        }
+      }
+
+      .collection-card{
+        &__img{
+          width: 50%;
+        }
+        &__h3{
+          @include regular-fonts();
+        }
+      }

@@ -12,15 +12,43 @@
   </div>
   <div class="footer__column">
     <ul class="footer__nav-first">
-      <li><a href="/">HOME</a></li>
-      <li><a href="/cart">CART</a></li>
-      <li><a href="/products">ALL PRODUCTS</a></li>
-      <li><a href="/collections">COLLECTIONS</a></li>
+      <li>
+        <a href="{{ settings.footer.settings.links[0].url}}">
+        {{ settings.footer.settings.links[0].label | upcase }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ settings.footer.settings.links[1].url}}">
+        {{ settings.footer.settings.links[1].label | upcase }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ settings.footer.settings.links[2].url}}">
+        {{ settings.footer.settings.links[2].label | upcase }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ settings.footer.settings.links[3].url}}">
+        {{ settings.footer.settings.links[3].label | upcase }}
+        </a>
+      </li>
     </ul>
     <ul class="footer__nav-second">
-      <li><a href="/refund-policy">REFUND POLICY</a></li>
-      <li><a href="/privacy-policy">PRIVACY POLICY</a></li>
-      <li><a href="/terms-of-service">TERMS OF SERVICE</a></li>
+      <li>
+        <a href="{{ settings.footer.settings.links[4].url}}">
+        {{ settings.footer.settings.links[4].label | upcase }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ settings.footer.settings.links[5].url}}">
+        {{ settings.footer.settings.links[5].label | upcase }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ settings.footer.settings.links[6].url}}">
+        {{ settings.footer.settings.links[6].label | upcase }}
+        </a>
+      </li>
     </ul>
     <div class="header__section footer__section--center">
         <div class="footer__payment-methods">
