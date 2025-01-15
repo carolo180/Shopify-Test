@@ -1,0 +1,8 @@
+<section class="featured-collections">
+  <h2>{{ settings['collections'].settings.heading }}</h2>
+  <div class="collection-list">
+    {% for collection in collections %}
+      {% render 'collection-card', collection: collection %}
+    {% endfor %}
+  </div>
+</section>
