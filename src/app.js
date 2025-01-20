@@ -1,6 +1,7 @@
 import './styles.scss';
 console.log('Gradiweb is online!!!');
 
+// MARQUEES
 
 document.addEventListener("DOMContentLoaded", () => {
     const bannerTrack = document.getElementById("banner-track");
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const trackWidth = bannerTrack.offsetWidth;
       const parentWidth = bannerTrack.parentElement.offsetWidth;
 
-      const trackBarWidth = barTrack.offsetWidth;
+      const trackBarWidth = barTrack.offsetWidth; //obtiene el ancho total visible
       const parentBarWidth = barTrack.parentElement.offsetWidth;
   
       // Clonamos los elementos hasta que el ancho total del track sea mayor al del contenedor
@@ -36,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ensureContinuousScroll();
   });
 
+   // MENU RESPONSIVE
+
   document.addEventListener('DOMContentLoaded', () => {
-    // ... (other JavaScript, including menu toggle and blur-on-scroll)
     
     const hamburger = document.getElementById('burguer');
     const menu = document.getElementById('menu');
@@ -47,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.classList.toggle('is-active'); // Toggle the 'is-active' class
     });
   });
+
+  // OPACIDAD DEL HEADER
 
   window.addEventListener('scroll', () => {
     const headerContainer = document.querySelector('.header__container');
@@ -58,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       headerContainer.style.backgroundColor = '#1C1C1E'; // Restore transparent background
     }
     });
+
+   // ANIMACION CARDS
 
     document.addEventListener('DOMContentLoaded', function () {
       const toggleButton = document.querySelector('.featured-products__toggle');
@@ -76,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       };
     
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      const observer = new IntersectionObserver(observerCallback, observerOptions); //detecta si un elemento está visible (total o parcialmente) dentro del área visible
     
       productCards.forEach((card, index) => {
         // Observa solo las tarjetas adicionales (índice >= 4)

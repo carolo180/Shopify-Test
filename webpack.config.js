@@ -4,20 +4,20 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  entry: './src/app.js',
+  mode: 'development', // Define si el build está en modo development (para debugging) o production (para optimización).
+  entry: './src/app.js', //Define el archivo de entrada principal de la aplicación.
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'public'),
+    filename: 'main.js', //archivo de salida.
+    path: path.resolve(__dirname, 'public'),//ruta archivo de salida.
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // Extrae CSS en un archivo separado
-          'css-loader', // Convierte CSS a módulos de JS
-          'sass-loader', // Compila SCSS a CSS
+          MiniCssExtractPlugin.loader, //Extrae CSS en un archivo separado //Reduce el tamaño de los archivos finales
+          'css-loader', // Convierte CSS a módulos de JS para que webpack los entienda
+          'sass-loader', // CONVIERTE SASS A CSS
         ],
       },
       {
@@ -30,7 +30,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
+    new MiniCssExtractPlugin({ //Extrae el CSS compilado en un archivo separado. - mejora el rendimiento
       filename: 'styles.css', // Nombre del archivo de salida CSS
     }),
   ],

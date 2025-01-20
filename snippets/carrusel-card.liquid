@@ -3,7 +3,7 @@
         <img class="product-card__img" 
         rounded-[5px] 
         object-cover" 
-        src="/assets/{{ product.image }}" 
+        src="/assets/{{ product.image }}" {% comment %} objeto {% endcomment %}
         alt="Product Card">
     </div>
   
@@ -11,7 +11,7 @@
     <div>
         <h3 class="product-card__text">{{ product.title }}</h3>
         <p class="product-card__price"> ${{ product.price }} USD</p>
-        {% if product.tags %}
+        {% if product.tags %}  {% comment %} etiquetas {% endcomment %}
             <ul class="product-card__tags">
             {% for tag in product.tags %}
                 <li>{{ tag }}</li>
